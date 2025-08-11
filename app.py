@@ -13,7 +13,7 @@ from model_training import train_models, train_image_classification_model, train
 from visualization import create_visualization, fig_to_base64
 from visualization_cnn import create_cnn_visualization  # Import the CNN visualization module
 from visualization_object import create_object_detection_visualization  # Import the object detection visualization module
-from utils import generate_loading_code, write_requirements_file, create_project_zip, generate_comprehensive_report
+from utils import generate_loading_code, write_requirements_file, create_project_zip
 from db_system_integration import apply_patches
 
 # Initialize Flask app
@@ -400,38 +400,6 @@ def download(filename):
         logger.error(f"Download error: {str(e)}")
         return jsonify({'error': f'Error downloading file: {str(e)}'}), 500
 
-@app.route('/api/report/<filename>', methods=['GET'])
-def generate_report(filename):
-    """Generate a comprehensive PDF report for the ML project"""
-    try:
-        from utils import generate_comprehensive_report
-        
-        # Try to get the most recent project data from the database
-        # For now, we'll generate a basic comprehensive report
-        # In a production system, you might want to store project metadata
-        
-        # Generate the comprehensive report
-        report_path = generate_comprehensive_report(
-            model_file="best_model",  # Default model file name
-            models_dir=MODELS_DIR,
-            downloads_dir=DOWNLOADS_DIR,
-            task_type="classification",  # Default task type
-            model_info={},  # Empty for now, could be enhanced to store project metadata
-            dataset_info={},  # Empty for now
-            visualizations={},  # Empty for now
-            is_image_model=False,
-            is_object_detection=False
-        )
-        
-        if report_path and os.path.exists(report_path):
-            return send_file(report_path, as_attachment=True, download_name="ML_Project_Report.pdf")
-        else:
-            # Fallback to basic report if comprehensive report fails
-            return jsonify({'error': 'Could not generate comprehensive report'}), 500
-            
-    except Exception as e:
-        logger.error(f"Report generation error: {str(e)}")
-        return jsonify({'error': f'Error generating report: {str(e)}'}), 500
     
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=5000)

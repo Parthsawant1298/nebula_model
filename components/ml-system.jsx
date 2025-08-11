@@ -157,7 +157,7 @@ export default function MLSystem() {
     try {
       // Add a longer timeout for the fetch operation since model training can take time
       const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), 300000) // 5-minute timeout
+      const timeoutId = setTimeout(() => controller.abort(), 120 * 60 * 1000) // 2-hour timeout (same as backend)
 
       const response = await fetch("/api/process", {
         method: "POST",
@@ -286,15 +286,6 @@ export default function MLSystem() {
     }
   }
 
-  // NEW: Function to download detailed report (doesn't affect existing functionality)
-  const handleReportDownload = () => {
-    if (downloadUrl) {
-      // Extract the filename from the download URL
-      const filename = downloadUrl.split('/').pop()
-      const reportUrl = `/api/report/${filename}`
-      window.location.href = reportUrl
-    }
-  }
 
   // Function to create Plotly visualizations from backend data
   const createPlotlyVisualization = (plot) => {
@@ -699,14 +690,6 @@ export default function MLSystem() {
                       >
                         <Download className="mr-2 h-4 w-4" />
                         Download Project
-                      </Button>
-                      <Button
-                        onClick={handleReportDownload}
-                        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-md shadow-[0_5px_15px_-5px_rgba(59,130,246,0.4)] transition-all duration-300 hover:shadow-[0_8px_20px_-5px_rgba(59,130,246,0.5)] transform hover:-translate-y-0.5"
-                        size="sm"
-                      >
-                        <FileText className="mr-2 h-4 w-4" />
-                        Download Report
                       </Button>
                     </div>
                   )}

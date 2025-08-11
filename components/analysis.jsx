@@ -54,54 +54,6 @@ export default function CsvAnalysis() {
   const [selectedFileName, setSelectedFileName] = useState('');
   const [filePreview, setFilePreview] = useState(null);
 
-  // Fetch available files on component mount
-  useEffect(() => {
-    const getFiles = async () => {
-      try {
-        await fetchAvailableFiles();
-      } catch (err) {
-        console.error('Error in useEffect:', err);
-      }
-    };
-    
-    getFiles();
-  }, []);
-
-  // Fetch the list of existing datasets from the backend
-  const fetchAvailableFiles = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/list_files`);
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch files');
-      }
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        setAvailableFiles(data.files || []);
-        
-        // If files exist, select the first one by default
-        if (data.files && data.files.length > 0) {
-          const firstFile = data.files[0];
-          setSelectedFileName(firstFile.filename);
-          setFilePreview({
-            columns: firstFile.columns,
-            data: firstFile.preview
-          });
-        }
-      } else {
-        throw new Error(data.error || 'Unknown error fetching files');
-      }
-    } catch (err) {
-      console.error('Error fetching files:', err);
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   // Handle file upload
   const handleFileUpload = async (e) => {
     const uploadedFiles = Array.from(e.target.files);

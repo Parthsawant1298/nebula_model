@@ -204,3 +204,51 @@
 2025-08-11 19:27:40,867 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:27:40] "POST /process HTTP/1.1" 200 -
 2025-08-11 19:28:14,272 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:28:14] "GET /api/download/project_1b35811d-cdd4-4d46-be88-a62a4e7744d1.zip HTTP/1.1" 200 -
 2025-08-11 19:28:42,064 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:28:42] "GET /api/report/project_1b35811d-cdd4-4d46-be88-a62a4e7744d1.zip HTTP/1.1" 200 -
+2025-08-11 20:49:44,090 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+2025-08-11 20:49:44,092 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 20:57:30,855 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 20:57:30,855 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 20:57:53,512 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 20:57:53] "POST /process HTTP/1.1" 200 -
+2025-08-11 20:58:05,576 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 20:58:05] "GET /api/report/project_2a735a00-b4eb-4abb-a577-ebd8c35cdc67.zip HTTP/1.1" 200 -
+2025-08-11 21:04:56,472 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.58.180.18:5000
+2025-08-11 21:04:56,472 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 21:05:52,078 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 21:05:52,078 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 21:18:14,360 - __main__ - INFO - Processing request - Task Type: classification
+2025-08-11 21:18:14,360 - __main__ - INFO - Processing request - Task Type: classification
+2025-08-11 21:18:22,074 - root - INFO - Dataset downloaded from Kaggle: ml_system\datasets\Laptop_price.csv
+2025-08-11 21:18:22,074 - root - INFO - Auto-detected task type: regression
+2025-08-11 21:18:22,084 - __main__ - INFO - Dataset downloaded from Kaggle: ml_system\datasets\Laptop_price.csv
+2025-08-11 21:18:22,084 - __main__ - INFO - Dataset downloaded from Kaggle: ml_system\datasets\Laptop_price.csv
+2025-08-11 21:18:22,090 - __main__ - INFO - Auto-detected task type for Kaggle dataset: regression
+2025-08-11 21:18:22,090 - __main__ - INFO - Auto-detected task type for Kaggle dataset: regression
+2025-08-11 21:18:22,090 - __main__ - INFO - Changing task type from classification to regression based on dataset analysis
+2025-08-11 21:18:22,090 - __main__ - INFO - Changing task type from classification to regression based on dataset analysis
+2025-08-11 21:18:45,222 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 21:18:45] "POST /process HTTP/1.1" 200 -
+2025-08-11 21:25:47,102 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.58.180.18:5000
+2025-08-11 21:25:47,103 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 21:26:07,824 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 21:26:07,824 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 21:31:42,474 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.58.180.18:5000
+2025-08-11 21:31:42,487 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 22:08:44,360 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 22:08:44,360 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 22:34:30,453 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 22:34:30] "POST /process HTTP/1.1" 200 -
+2025-08-11 22:43:40,529 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 22:43:40,529 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 22:43:48,191 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 22:43:48] "POST /process HTTP/1.1" 200 -
+2025-08-11 22:49:01,317 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 22:49:01,317 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 22:49:27,787 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 22:49:27] "POST /process HTTP/1.1" 200 -

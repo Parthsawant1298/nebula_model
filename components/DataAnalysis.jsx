@@ -32,48 +32,82 @@ const InteractiveDataChat = () => {
   const [error, setError] = useState(null);
   const [query, setQuery] = useState('');
   const [isAiProcessing, setIsAiProcessing] = useState(false);
+  const [uploadedFileName, setUploadedFileName] = useState(null);
 
-  const handleFileUpload = (event) => {
+  const handleFileUpload = async (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
     setError(null);
     setResult(null);
     setData(null);
+    setUploadedFileName(null);
 
-    Papa.parse(file, {
-      header: true,
-      dynamicTyping: true,
-      skipEmptyLines: 'greedy',
-      complete: (results) => {
-        if (results.errors.length > 0) {
-          setError(`CSV parsing errors: ${results.errors.map(e => e.message).join(', ')}`);
-          return;
-        }
-        if (results.data.length === 0) {
-          setError('The CSV file appears to be empty');
-          return;
-        }
-        setData(results.data);
-      },
-      error: (error) => {
-        setError(`Error reading CSV: ${error.message}`);
+    // First, upload file to backend
+    const formData = new FormData();
+    formData.append('files', file);
+
+    try {
+      const uploadResponse = await fetch('http://localhost:5002/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!uploadResponse.ok) {
+        throw new Error(`Upload failed: ${uploadResponse.status}`);
       }
-    });
+
+      const uploadResult = await uploadResponse.json();
+      if (!uploadResult.success) {
+        setError(uploadResult.error);
+        return;
+      }
+
+      // Store filename for querying
+      setUploadedFileName(uploadResult.files[0].filename);
+
+      // Also parse locally for preview
+      Papa.parse(file, {
+        header: true,
+        dynamicTyping: true,
+        skipEmptyLines: 'greedy',
+        complete: (results) => {
+          if (results.errors.length > 0) {
+            setError(`CSV parsing errors: ${results.errors.map(e => e.message).join(', ')}`);
+            return;
+          }
+          if (results.data.length === 0) {
+            setError('The CSV file appears to be empty');
+            return;
+          }
+          setData(results.data);
+        },
+        error: (error) => {
+          setError(`Error reading CSV: ${error.message}`);
+        }
+      });
+    } catch (err) {
+      setError(`Upload failed: ${err.message}`);
+    }
   };
 
   const processWithAI = async () => {
+    if (!uploadedFileName) {
+      setError('No file uploaded');
+      return;
+    }
+
     setIsAiProcessing(true);
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:5000/analyze', {
+      const response = await fetch('http://localhost:5002/query', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          data,
+          filename: uploadedFileName,
           query: query.trim()
         })
       });
@@ -83,7 +117,7 @@ const InteractiveDataChat = () => {
       }
 
       const result = await response.json();
-      if (result.type === 'error') {
+      if (!result.success) {
         setError(result.error);
         setResult(null);
       } else {
@@ -101,7 +135,7 @@ const InteractiveDataChat = () => {
   const analyzeData = async (e) => {
     e.preventDefault();
     
-    if (!data) {
+    if (!data || !uploadedFileName) {
       setError('Please upload a CSV file first');
       return;
     }

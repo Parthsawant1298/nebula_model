@@ -22,8 +22,8 @@ export async function POST(request) {
     const controller = new AbortController()
     const signal = controller.signal
     
-    // Set timeout to 15 minutes for model training
-    const timeout = setTimeout(() => controller.abort(), 20 * 60 * 1000)
+    // Set timeout to 120 minutes for model training
+const timeout = setTimeout(() => controller.abort(), 120 * 60 * 1000)
     
     const flaskResponse = await fetch("http://localhost:5000/process", {
       method: "POST",

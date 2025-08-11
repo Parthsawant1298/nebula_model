@@ -25,6 +25,10 @@ print("API Key:", api_key)  # This will help you verify if the key is being read
 
 genai.configure(api_key=api_key)
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"success": True, "message": "Analysis server is running", "port": 5002})
+
 def chat_with_csv(df, query):
     """
     Chat with CSV data using Gemini
@@ -85,18 +89,18 @@ def upload_file():
         if file and file.filename.endswith('.csv'):
             filename = file.filename
             
-            # Save to database storage
-            db_fs.save_file(file, DATASETS_DIR)
-            
-            # Store filename for later use
-            uploaded_files[filename] = filename
-            
-            # Read preview data
             try:
-                # Get the file content from database
-                file_content = db_fs.get_file(filename, DATASETS_DIR)
+                # Read file content directly
+                file.seek(0)
+                file_content = file.read()
                 
-                # Create DataFrame from content
+                # Save to database storage using file content
+                db_fs.save_file_content(file_content, filename, DATASETS_DIR)
+                
+                # Store filename for later use
+                uploaded_files[filename] = filename
+                
+                # Create DataFrame from content for preview
                 df = pd.read_csv(io.BytesIO(file_content))
                 
                 preview = df.head(3).to_dict('records')
@@ -107,7 +111,7 @@ def upload_file():
                     "columns": columns
                 })
             except Exception as e:
-                return jsonify({"success": False, "error": f"Error reading CSV: {str(e)}"})
+                return jsonify({"success": False, "error": f"Error processing CSV: {str(e)}"})
     
     return jsonify({"success": True, "files": file_info})
 
@@ -139,49 +143,6 @@ def query_csv():
     except Exception as e:
         return jsonify({"success": False, "error": f"An error occurred: {str(e)}"})
 
-# Add a route to list all available CSV files in the database
-@app.route('/list_files', methods=['GET'])
-def list_files():
-    try:
-        # Get all files from database
-        all_files = db_fs.list_files(DATASETS_DIR)
-        
-        # Filter for CSV files
-        csv_files = [f for f in all_files if f.endswith('.csv')]
-        
-        files = []
-        for filename in csv_files:
-            # Get file content from database
-            try:
-                file_content = db_fs.get_file(filename, DATASETS_DIR)
-                
-                # Read the content into a DataFrame
-                df = pd.read_csv(io.BytesIO(file_content))
-                
-                preview = df.head(3).to_dict('records')
-                columns = df.columns.tolist()
-                files.append({
-                    "filename": filename,
-                    "preview": preview,
-                    "columns": columns
-                })
-            except Exception as e:
-                # Skip files that can't be read
-                print(f"Error reading file {filename}: {str(e)}")
-                continue
-        
-        return jsonify({"success": True, "files": files})
-    except Exception as e:
-        return jsonify({"success": False, "error": str(e)})
 
 if __name__ == '__main__':
-    # Initialize by loading existing CSV files from the database
-    try:
-        all_files = db_fs.list_files(DATASETS_DIR)
-        csv_files = [f for f in all_files if f.endswith('.csv')]
-        for filename in csv_files:
-            uploaded_files[filename] = filename
-    except Exception as e:
-        print(f"Error loading existing files: {str(e)}")
-    
     app.run(debug=False, port=5002, host='0.0.0.0')

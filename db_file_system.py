@@ -140,8 +140,23 @@ class DBFileSystem:
         # Determine filename
         filename = os.path.basename(filepath)
         
+        return self.save_file_content(content, filename, directory_name, replace)
+    
+    def save_file_content(self, content, filename, directory_name, replace=True):
+        """
+        Save file content directly to the database
+        
+        Args:
+            content: File content as bytes
+            filename: Name of the file
+            directory_name: Name of the directory (datasets, models, downloads, runs)
+            replace: If True, replace existing file with same name
+        
+        Returns:
+            file_id: ID of the file in the database
+        """
         # Get mime type
-        mime_type = mimetypes.guess_type(filepath)[0] or 'application/octet-stream'
+        mime_type = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
         
         # Get directory ID
         directory_id = self._get_directory_id(directory_name)
