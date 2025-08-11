@@ -17,3 +17,5 @@ kaggle
 scipy
 pyyaml
 streamlit
+weasyprint
+reportlab

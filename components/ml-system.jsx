@@ -1,42 +1,43 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { useRouter } from "next/navigation"
-import {
-  AlertCircle,
-  ArrowUp,
-  BarChart,
-  Cpu,
-  ArrowLeft,
-  Rocket,
-  MessageSquare,
-  Sparkles,
-  Database,
-  Download,
-  LineChart,
-  PieChart,
-  LayoutDashboard,
-  BrainCircuit,
-  Image,
-  Box,
-  Search,
-  X,
-  Info,
-  Zap,
-  BarChart3,
-  Table,
-  Eye,
-} from "lucide-react"
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { motion } from "framer-motion"
+import {
+    AlertCircle,
+    ArrowLeft,
+    ArrowUp,
+    BarChart,
+    BarChart3,
+    Box,
+    BrainCircuit,
+    Cpu,
+    Database,
+    Download,
+    Eye,
+    FileText,
+    Image,
+    Info,
+    LayoutDashboard,
+    LineChart,
+    MessageSquare,
+    PieChart,
+    Rocket,
+    Search,
+    Sparkles,
+    Table,
+    X,
+    Zap,
+} from "lucide-react"
 import dynamic from "next/dynamic"
+import { useRouter } from "next/navigation"
+import { useEffect, useRef, useState } from "react"
 
 // Dynamically import Plotly to avoid SSR issues
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false })
@@ -282,6 +283,16 @@ export default function MLSystem() {
   const handleDownload = () => {
     if (downloadUrl) {
       window.location.href = downloadUrl
+    }
+  }
+
+  // NEW: Function to download detailed report (doesn't affect existing functionality)
+  const handleReportDownload = () => {
+    if (downloadUrl) {
+      // Extract the filename from the download URL
+      const filename = downloadUrl.split('/').pop()
+      const reportUrl = `/api/report/${filename}`
+      window.location.href = reportUrl
     }
   }
 
@@ -680,14 +691,24 @@ export default function MLSystem() {
                     Project Dashboard
                   </CardTitle>
                   {downloadUrl && (
-                    <Button
-                      onClick={handleDownload}
-                      className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-md shadow-[0_5px_15px_-5px_rgba(16,185,129,0.4)] transition-all duration-300 hover:shadow-[0_8px_20px_-5px_rgba(16,185,129,0.5)] transform hover:-translate-y-0.5"
-                      size="sm"
-                    >
-                      <Download className="mr-2 h-4 w-4" />
-                      Download Project
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button
+                        onClick={handleDownload}
+                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-md shadow-[0_5px_15px_-5px_rgba(16,185,129,0.4)] transition-all duration-300 hover:shadow-[0_8px_20px_-5px_rgba(16,185,129,0.5)] transform hover:-translate-y-0.5"
+                        size="sm"
+                      >
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Project
+                      </Button>
+                      <Button
+                        onClick={handleReportDownload}
+                        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-md shadow-[0_5px_15px_-5px_rgba(59,130,246,0.4)] transition-all duration-300 hover:shadow-[0_8px_20px_-5px_rgba(59,130,246,0.5)] transform hover:-translate-y-0.5"
+                        size="sm"
+                      >
+                        <FileText className="mr-2 h-4 w-4" />
+                        Download Report
+                      </Button>
+                    </div>
                   )}
                 </div>
                 <CardDescription className={styles.dashboardDescription}>

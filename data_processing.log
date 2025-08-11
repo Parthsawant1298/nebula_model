@@ -92,3 +92,115 @@
 2025-08-11 15:43:33,182 - __main__ - INFO - Processing request - Task Type: image_classification
 2025-08-11 15:48:01,342 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 15:48:01] "POST /process HTTP/1.1" 200 -
 2025-08-11 15:48:50,744 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 15:48:50] "GET /api/download/project_a1b6f2df-1a2e-45cd-837f-cff5558d6fa6.zip HTTP/1.1" 200 -
+2025-08-11 17:06:29,350 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 17:06:29,351 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:12:57,358 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:12:57,358 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:13:33,193 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 17:13:33] "POST /process HTTP/1.1" 200 -
+2025-08-11 17:19:58,105 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 17:19:58] "[33mGET /api/report/project_1948785c-d745-4a24-b568-641d48276528.zip HTTP/1.1[0m" 404 -
+2025-08-11 17:24:23,223 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 17:24:23,224 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:26:19,449 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:26:19,449 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:26:19,450 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 17:26:19] "POST /process HTTP/1.1" 200 -
+2025-08-11 17:43:23,037 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 17:43:23,038 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:43:38,416 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:43:38,416 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:44:09,447 - __main__ - ERROR - Error storing report: 'DBFileSystem' object has no attribute 'store_file'
+2025-08-11 17:44:09,447 - __main__ - ERROR - Error storing report: 'DBFileSystem' object has no attribute 'store_file'
+2025-08-11 17:44:09,458 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 17:44:09] "POST /process HTTP/1.1" 200 -
+2025-08-11 17:57:05,297 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 17:57:05,298 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:58:17,884 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:58:17,884 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 17:58:48,064 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001DA8595A3B0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-08-11 17:58:52,244 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001DA8595A3B0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-08-11 17:58:58,615 - __main__ - ERROR - Error storing report: 'DBFileSystem' object has no attribute 'store_file'
+2025-08-11 17:58:58,615 - __main__ - ERROR - Error storing report: 'DBFileSystem' object has no attribute 'store_file'
+2025-08-11 17:58:58,623 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 17:58:58] "POST /process HTTP/1.1" 200 -
+2025-08-11 17:59:04,945 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 17:59:04] "GET /api/download/project_a44f332c-1800-4d3b-b496-ccf95b89ad3b.zip HTTP/1.1" 200 -
+2025-08-11 18:04:30,917 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 18:04:30,917 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 18:07:49,972 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 18:07:49,972 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 18:08:07,105 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:08:07,105 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:08:34,638 - __main__ - INFO - Report saved for project: project_c3ed8be3-6791-401d-b88f-692fa05d4fdd.zip
+2025-08-11 18:08:34,638 - __main__ - INFO - Report saved for project: project_c3ed8be3-6791-401d-b88f-692fa05d4fdd.zip
+2025-08-11 18:08:34,643 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 18:08:34] "POST /process HTTP/1.1" 200 -
+2025-08-11 18:17:37,383 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 18:17:37,385 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 18:17:43,556 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:17:43,556 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:18:26,616 - __main__ - INFO - Report saved for project: project_a270f507-3360-4a0f-884a-f6c7ac42cf34.zip
+2025-08-11 18:18:26,616 - __main__ - INFO - Report saved for project: project_a270f507-3360-4a0f-884a-f6c7ac42cf34.zip
+2025-08-11 18:18:26,622 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 18:18:26] "POST /process HTTP/1.1" 200 -
+2025-08-11 18:22:24,866 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 18:22:24] "GET /api/report/project_a270f507-3360-4a0f-884a-f6c7ac42cf34.zip HTTP/1.1" 200 -
+2025-08-11 18:24:05,003 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 18:24:05,004 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 18:25:59,190 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 18:25:59,190 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 18:26:32,619 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:26:32,619 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:26:57,634 - __main__ - INFO - Report saved for project: project_5935b3d8-521b-4c90-9a15-43a08dc1f326.zip
+2025-08-11 18:26:57,634 - __main__ - INFO - Report saved for project: project_5935b3d8-521b-4c90-9a15-43a08dc1f326.zip
+2025-08-11 18:26:57,640 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 18:26:57] "POST /process HTTP/1.1" 200 -
+2025-08-11 18:36:03,030 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 18:36:03,030 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 18:36:53,881 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:36:53,881 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 18:37:29,528 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 18:37:29] "POST /process HTTP/1.1" 200 -
+2025-08-11 18:41:07,796 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 18:41:07,796 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 18:58:31,318 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 18:58:31] "POST /process HTTP/1.1" 200 -
+2025-08-11 19:24:19,067 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.230.184.18:5000
+2025-08-11 19:24:19,067 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 19:24:37,926 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 19:24:37,926 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 19:25:05,518 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:25:05] "POST /process HTTP/1.1" 200 -
+2025-08-11 19:25:20,471 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:25:20] "GET /api/download/project_995d8838-7d13-41ee-aebf-291cbbda7340.zip HTTP/1.1" 200 -
+2025-08-11 19:25:43,828 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:25:43] "[35m[1mGET /api/report/project_995d8838-7d13-41ee-aebf-291cbbda7340.zip HTTP/1.1[0m" 500 -
+2025-08-11 19:27:01,125 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 19:27:01,125 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 19:27:01,125 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:27:01] "POST /process HTTP/1.1" 200 -
+2025-08-11 19:27:20,655 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 19:27:20,655 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 19:27:34,525 - tensorflow - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000216E731B520> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-08-11 19:27:38,048 - tensorflow - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000216E731B520> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-08-11 19:27:40,867 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:27:40] "POST /process HTTP/1.1" 200 -
+2025-08-11 19:28:14,272 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:28:14] "GET /api/download/project_1b35811d-cdd4-4d46-be88-a62a4e7744d1.zip HTTP/1.1" 200 -
+2025-08-11 19:28:42,064 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 19:28:42] "GET /api/report/project_1b35811d-cdd4-4d46-be88-a62a4e7744d1.zip HTTP/1.1" 200 -
