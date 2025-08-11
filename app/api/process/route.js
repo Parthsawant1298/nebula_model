@@ -22,8 +22,8 @@ export async function POST(request) {
     const controller = new AbortController()
     const signal = controller.signal
     
-    // Set timeout to 10 minutes for model training
-    const timeout = setTimeout(() => controller.abort(), 10 * 60 * 1000)
+    // Set timeout to 15 minutes for model training
+    const timeout = setTimeout(() => controller.abort(), 20 * 60 * 1000)
     
     const flaskResponse = await fetch("http://localhost:5000/process", {
       method: "POST",
@@ -69,8 +69,16 @@ export async function POST(request) {
     return NextResponse.json(data)
   } catch (error) {
     console.error("Error in process API route:", error)
+    
+    // Handle specific timeout errors
+    if (error.name === 'AbortError' || error.code === 'UND_ERR_HEADERS_TIMEOUT') {
+      return NextResponse.json({ 
+        error: "The model training process is taking longer than expected. This is normal for complex datasets. Please try with a smaller dataset or contact support if the issue persists." 
+      }, { status: 504 }) // Gateway Timeout
+    }
+    
     return NextResponse.json({ 
-      error: error.message || "An error occurred during processing. The request may have timed out." 
+      error: error.message || "An error occurred during processing." 
     }, { status: 500 })
   }
 }
