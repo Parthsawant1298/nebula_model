@@ -43,3 +43,5 @@ yarn-error.log*
 next-env.d.ts
 "ml_system.db" 
 "*.db" 
+"*.db" 
+"ml_system.db" 
