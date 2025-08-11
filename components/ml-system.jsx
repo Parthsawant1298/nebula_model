@@ -89,7 +89,7 @@ export default function MLSystem() {
   }
 
   const navigateToGenerate = () => {
-    router.push("/generate")
+    router.push("/alter_expand")
   }
 
   const navigateToDeploy = () => {
@@ -337,7 +337,7 @@ export default function MLSystem() {
 
   // Define custom styles for the component
   const styles = {
-    container: "min-h-screen bg-black text-white mt-8",
+    container: "min-h-screen bg-black text-white mt-18",
     gradient:
       "absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(120,30,255,0.2),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(70,0,150,0.15),transparent_50%)] pointer-events-none",
     content: "container mx-auto px-4 py-4 relative z-10",
@@ -644,7 +644,7 @@ export default function MLSystem() {
                   >
                     <div className="flex items-center">
                       <MessageSquare className="h-5 w-5 mr-2" />
-                      Generate
+                      Alter and Expand
                     </div>
                   </Button>
 

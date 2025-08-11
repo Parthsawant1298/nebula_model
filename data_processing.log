@@ -252,3 +252,22 @@
 2025-08-11 22:49:01,317 - __main__ - INFO - Processing request - Task Type: image_classification
 2025-08-11 22:49:01,317 - __main__ - INFO - Processing request - Task Type: image_classification
 2025-08-11 22:49:27,787 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 22:49:27] "POST /process HTTP/1.1" 200 -
+2025-08-11 22:54:07,759 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 22:54:07,759 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-11 22:58:42,639 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 22:58:42] "POST /process HTTP/1.1" 200 -
+2025-08-11 23:01:17,454 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 23:01:17,454 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 23:01:19,443 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 23:01:19] "POST /process HTTP/1.1" 200 -
+2025-08-11 23:03:44,186 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 23:03:44,186 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 23:04:45,729 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 23:04:45] "POST /process HTTP/1.1" 200 -
+2025-08-11 23:05:07,735 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 23:05:07] "GET /api/download/project_7989a182-45ab-41c2-a901-541ef966fb30.zip HTTP/1.1" 200 -
+2025-08-11 23:28:19,578 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 23:28:19,578 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-11 23:30:32,542 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 23:30:32] "POST /process HTTP/1.1" 200 -
+2025-08-11 23:30:48,482 - werkzeug - INFO - 127.0.0.1 - - [11/Aug/2025 23:30:48] "GET /api/download/project_8fa2f25c-8a74-4a5e-a335-7f3a422a8b1d.zip HTTP/1.1" 200 -
+2025-08-12 02:12:14,800 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.58.180.18:5000
+2025-08-12 02:12:14,802 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
