@@ -50,24 +50,24 @@ def load_config():
 
 def generate_render_yaml(task_type, github_username, repo_name, model_file):
     """Generate render.yaml content based on the project type"""
-    # Updated to use run.py as entry point for better port handling
+    # Keep as Python since we're deploying Flask backend
     render_yaml = f"""services:
   - type: web
     name: {task_type.replace('_', '-')}-service
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python run.py
+    startCommand: python app.py
     repo: https://github.com/{github_username}/{repo_name}.git
     branch: main
     plan: free
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
-        value: "3.9.7"  # Full patch version
+        value: "3.9"
       - key: MODEL_FILE
         value: {model_file}
-      - key: STREAMLIT_SERVER_PORT
-        value: $PORT
+      - key: PORT
+        value: "10000"
 """
     return render_yaml
 

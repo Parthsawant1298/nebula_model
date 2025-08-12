@@ -247,10 +247,10 @@ export default function MLSystem() {
             else if (data.model_info.recall && data.model_info.recall > 0) {
               data.model_info.score = data.model_info.recall
             }
-            // Default fallback
+            // Default fallback - use the actual score from backend
             else {
-              data.model_info.score = 0.75 // Default fallback value
-              console.log("Using fallback performance score for object detection")
+              // Keep the original score from backend instead of hardcoding 0.75
+              console.log("Using original score from backend for object detection:", data.model_info.score)
             }
           }
         }

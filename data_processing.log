@@ -271,3 +271,37 @@
  * Running on http://127.0.0.1:5000
  * Running on http://10.58.180.18:5000
 2025-08-12 02:12:14,802 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-12 05:37:36,442 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-12 05:37:36,442 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-12 05:39:43,988 - werkzeug - INFO - 127.0.0.1 - - [12/Aug/2025 05:39:43] "POST /process HTTP/1.1" 200 -
+2025-08-12 05:43:09,351 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-12 05:43:09,351 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-12 05:45:16,598 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.61.254.18:5000
+2025-08-12 05:45:16,598 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-12 05:45:56,852 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-12 05:45:56,852 - __main__ - INFO - Processing request - Task Type: object_detection
+2025-08-12 05:47:59,104 - werkzeug - INFO - 127.0.0.1 - - [12/Aug/2025 05:47:59] "POST /process HTTP/1.1" 200 -
+2025-08-12 05:49:06,721 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-12 05:49:06,721 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-12 05:55:00,966 - werkzeug - INFO - 127.0.0.1 - - [12/Aug/2025 05:55:00] "POST /process HTTP/1.1" 200 -
+2025-08-12 06:00:15,122 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.61.254.18:5000
+2025-08-12 06:00:15,122 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-12 06:04:19,425 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.61.254.18:5000
+2025-08-12 06:04:19,425 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-12 06:06:06,028 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.61.254.18:5000
+2025-08-12 06:06:06,028 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-12 06:07:28,055 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-12 06:07:28,055 - __main__ - INFO - Processing request - Task Type: image_classification
+2025-08-12 06:12:17,992 - werkzeug - INFO - 127.0.0.1 - - [12/Aug/2025 06:12:17] "POST /process HTTP/1.1" 200 -
