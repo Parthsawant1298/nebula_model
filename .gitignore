@@ -45,3 +45,5 @@ next-env.d.ts
 "*.db" 
 "*.db" 
 "ml_system.db" 
+"*.db" 
+"ml_system.db" 
